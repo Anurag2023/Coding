@@ -2,12 +2,15 @@
 using namespace std;
 int main(){
     int i,j,k;
-    for(i=1;i<=5;i++)
+    for(i=1;i<=15;i++)
     {
-        for(j=0;j<i;j++)
+        k=i;
+        for(j=i;j>0;j--)
         {
-            cout<<"*"<<" ";
+            cout<<k<<" ";
+            k--;
         }
+        k=i;
         cout<<endl;
     }
     return 0;
