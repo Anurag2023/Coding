@@ -103,6 +103,11 @@ void display(node* &head){
 
 }
 
+void nextnext(node* &head){
+    int temp;
+    temp = head -> next -> next -> next -> data;
+    cout<<"next ke next ka next uska bhi next : "<<temp<<endl;
+}
 
 int main()
 {
@@ -113,11 +118,14 @@ int main()
     insertAtTail(tail , 30);
     insertAtTail(tail , 40);
     insertAtTail(tail , 50);
+    insertAtTail(tail , 60);
+    insertAtTail(tail , 70);
+    insertAtTail(tail , 80);
   
     
     insertAtTail(tail , 25);
     insertAtPosition(tail , head , 4 , 55);
-  
+    nextnext(head);
     display(head);
     cout<<endl;
     cout<<"head : "<<head -> data<<endl;
