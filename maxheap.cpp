@@ -11,6 +11,7 @@ int main()
     priority_queue<int,vector<int>,greater<int>> minh(arr.begin(),arr.end());//min heap
     priority_queue<int>maxh(arr.begin(),arr.end()); // max heap
     
+    
     for(i=0;i<6;i++)
     {
         cout<<minh.top()<<" ";  // min heap
