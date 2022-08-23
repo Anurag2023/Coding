@@ -1,14 +1,17 @@
 #include<iostream>
 using namespace std;
 
-int rec(int n)
+void rec(int n)
 {
-    if(n==0)
-        return 0;
-    cout<<" B "<<n<<" ";
+    if(n==1)
+        {
+            cout<<n<<" ";
+            return;
+        }
+    //cout<<" B "<<n<<" ";
     rec(n-1);
-    cout<<" A "<<n<<" ";
-    return n;
+    cout<< n<<" ";
+    
 }
 
 int main()
