@@ -1,4 +1,5 @@
 #include<iostream>
+#include<queue>
 using namespace std;
 
 class node{
@@ -15,9 +16,38 @@ class node{
     }
 };
 
+void printtree(node* root)
+{
+    queue<node*>q;
+    q.push(root);
+    q.push(NULL);   //1 3 5 -1 6 -1 -1 7 -1 -1 11 13 -1 -1 -1
+
+    while(!q.empty())
+    {
+        node* temp = q.front();
+        q.pop();
+        if(temp == NULL)
+        {
+            cout<<endl;
+            if(!q.empty())
+                q.push(NULL);
+        }
+        else{
+            cout<<temp -> data<<" ";
+            if(temp -> left){
+                q.push(temp -> left);
+            }
+            if(temp -> right){
+                q.push(temp -> right);
+            }
+        }
+       
+    }
+}
+
 node* buildtree(node* root)
 {
-    cout<<"enter data : ";
+    cout<<"enter data : "<<endl;
     int data;
     cin>>data;
     root = new node(data);
@@ -34,5 +64,6 @@ int main()
 {
     node* root = NULL;
     root = buildtree(root);
+    printtree(root);
     return 0;
 }
