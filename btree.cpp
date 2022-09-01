@@ -1,25 +1,43 @@
 #include<iostream>
+#include<queue>
 using namespace std;
 
 class node{
     public:
     int data;
-    node* next;
-    node* prev;
+    node* left;
+    node* right;
 
     node(int data)
     {
         this -> data = data;
-        this -> next = NULL;
-        this -> prev = NULL;
+        this -> right = NULL;
+        this -> left = NULL;
     }
 };
 
 
-void buildtree(node* root)
+node* buildtree(node* root)
 {
-    if(root == -1)
+    
+
+    cout<<endl<<"enter data : ";
+    int data;
+    cin>>data;
+    root = new node(data);
+    if(data == -1)
         return NULL;
+    cout<<"enter left of data : "<<data;
+    root -> left = buildtree(root -> left);
+    cout<<"enter right of data : "<<data;
+    root -> right = buildtree(root -> right);
+    return root;
+}
+
+node* printtree(node* root){
+    queue<node*>q;
+    q.push(root);
+    q.push(NULL);
     
 }
 
