@@ -3,9 +3,9 @@
 #include<numeric>
 using namespace std;
 int main(){
-    int a=INT_MAX;
-    //cout<<"enter a no : ";
-    //cin>>a;
+    int a;
+    cout<<"enter a no : ";
+    cin>>a;
     while(a>0)
     {
         cout<<a<<" ";
