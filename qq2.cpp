@@ -1,37 +1,34 @@
-#include <iostream>
-#include<vector>
-#include<numeric>
+#include<bits/stdc++.h>
 using namespace std;
 
-long int fun(vector<int> parcels,int k){
-    int i=1;
-    int sum =0;
-    int j=0;
-    int count = parcels.size();
-    sort(parcels.begin(),parcels.end());
-    while(count<k){
-        if(i<parcels[j])
-        {
-            sum+=(i++);
-            count++;
-        }
+int fun(string s){
+   
+    
+    stack<char> stack;
+    stack.push(s[0]);
+    
+    for(int i=1;i<s.size();i++)
+    {
+        if(int(stack.top()) + int(s[i]) == 17)
+            stack.pop();
         else
-            j++;
-
+            stack.push(s[i]);
     }
+    int count =0;
+    while(!stack.empty())
+    {
+        stack.pop();
+        count++;
+    }
+    return count;
+
 }
 
 int main(){
-    int i,a,k,n;
-    cout<<"enter the size of the array ";
-    cin>>n;
-    vector<int> parcels(n);
-    for(i=0;i<n;i++){
-        cin>>parcels[i];
-    }
-    cout<<"enter k ";
-    cin>>k;
-    long int ans = fun(parcels , k);
+    string s;
+    cout<<"enter ";
+    cin>>s;
+    int ans = fun(s);
     cout<<ans;
     return 0;
 }
