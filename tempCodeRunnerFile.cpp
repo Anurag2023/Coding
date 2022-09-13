@@ -1,2 +1,1 @@
-cout<<minh.top();
-    // cout<<endl;
+s
